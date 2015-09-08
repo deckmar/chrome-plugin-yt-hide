@@ -1,0 +1,21 @@
+{
+  "manifest_version": 2,
+
+  "name": "Hide watched YT videos",
+  "description": "Hides all watched videos on YT",
+  "version": "1.2",
+
+  "icons": {	"48": "icon48.png",
+				"128": "icon128.png" },
+
+  "content_scripts": [
+    {
+      "matches": ["https://www.youtube.com/*"],
+      "js": ["yt-remove-watched.js"]
+    }
+  ],
+
+  "permissions": [
+    "https://www.youtube.com/"
+  ]
+}
