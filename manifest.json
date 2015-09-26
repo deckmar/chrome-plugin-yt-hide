@@ -1,28 +1,76 @@
 {
   "manifest_version": 2,
-
   "name": "Hide watched YT videos",
   "description": "Hides all watched videos on YT",
-  "version": "1.3",
-
-  "icons": {	"48": "icon48.png",
-				"128": "icon128.png" },
-
+  "version": "1.4",
+  "icons": {
+    "48": "icon48.png",
+    "128": "icon128.png"
+  },
   "content_scripts": [
     {
-      "matches": ["https://www.youtube.com/feed/subscriptions"],
-      "js": ["yt-remove-watched-in-my-subscriptions.js"]
+      "matches": [
+        "https://www.youtube.com/feed/subscriptions"
+      ],
+      "js": [
+        "yt-remove-watched-in-my-subscriptions.js"
+      ]
+    },
+
+
+
+    {
+      "matches": [
+        "https://www.youtube.com/user/*/featured"
+      ],
+      "js": [
+        "yt-remove-watched-in-user-home.js"
+      ]
     },
     {
-      "matches": ["https://www.youtube.com/user/*/videos"],
-      "js": ["yt-remove-watched-in-user-videos.js"]
+      "matches": [
+        "https://www.youtube.com/channel/*/featured"
+      ],
+      "js": [
+        "yt-remove-watched-in-user-home.js"
+      ]
     },
     {
-      "matches": ["https://www.youtube.com/user/*/featured"],
-      "js": ["yt-remove-watched-in-user-home.js"]
+      "matches": [
+        "https://www.youtube.com/user/*"
+      ],
+      "js": [
+        "yt-remove-watched-in-user-home.js"
+      ]
+    },
+    {
+      "matches": [
+        "https://www.youtube.com/channel/*"
+      ],
+      "js": [
+        "yt-remove-watched-in-user-home.js"
+      ]
+    },
+
+
+
+    {
+      "matches": [
+        "https://www.youtube.com/user/*/videos"
+      ],
+      "js": [
+        "yt-remove-watched-in-user-videos.js"
+      ]
+    },
+    {
+      "matches": [
+        "https://www.youtube.com/channel/*/videos"
+      ],
+      "js": [
+        "yt-remove-watched-in-user-videos.js"
+      ]
     }
   ],
-
   "permissions": [
     "https://www.youtube.com/"
   ]
