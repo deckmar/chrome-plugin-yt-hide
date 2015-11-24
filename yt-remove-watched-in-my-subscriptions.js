@@ -16,7 +16,7 @@ var removeWatched = function() {
 		// All wathced-badges (note that the list "w" will shrink every time we remove an element)
 		var w = document.getElementsByClassName('watched-badge');
 		while(w.length > 0) {
-			upTo(w[0], 'li', '').remove();
+			upTo(w[0], 'li', 'yt-shelf-grid-item').remove();
 		}
 	} catch(ex) { }
 };
